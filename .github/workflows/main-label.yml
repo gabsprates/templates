@@ -10,7 +10,7 @@ jobs:
   pr_label_main:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/labeler@v3
+    - uses: actions/labeler@v3
       with:
         repo-token: "${{ secrets.LABELER_TOKEN }}"
         configuration-path: .github/main-labels.yml
