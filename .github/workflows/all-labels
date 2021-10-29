@@ -1,0 +1,22 @@
+name: "Pull Request Labels: all"
+
+on:
+  pull_request_target:
+    types: [opened]
+    branches:
+      - *
+      - !develop
+      - !main
+
+jobs:
+  pr_label_all:
+    runs-on: ubuntu-latest
+
+    permissions:
+      pull-requests: write
+
+    steps:
+    - uses: actions/labeler@v3
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        configuration-path: .github/develop-labels.yml
