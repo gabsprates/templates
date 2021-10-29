@@ -1,0 +1,16 @@
+name: "Pull Request Labels: develop"
+
+on:
+  pull_request_target:
+    types: [opened]
+    branches:
+      - develop
+
+jobs:
+  pr_label_main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/labeler@v3
+      with:
+        repo-token: "${{ secrets.LABELER_TOKEN }}"
+        configuration-path: .github/develop-labels.yml
