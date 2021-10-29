@@ -9,6 +9,10 @@ on:
 jobs:
   pr_label_main:
     runs-on: ubuntu-latest
+    
+    permissions:
+      pull-requests: write
+    
     steps:
     - uses: actions/labeler@v3
       with:
