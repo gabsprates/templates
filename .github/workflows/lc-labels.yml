@@ -7,7 +7,7 @@ on:
       - "LC**"
 
 jobs:
-  pr_label_develop:
+  pr_label_lc:
     runs-on: ubuntu-latest
 
     permissions:
